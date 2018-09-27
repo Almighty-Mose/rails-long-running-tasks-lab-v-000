@@ -44,6 +44,10 @@ class SongsController < ApplicationController
     flash[:notice] = "Song deleted."
     redirect_to songs_path
   end
+  
+  def upload
+    CSV.foreach(params[:songs].path, headers: true) do |song|
+  end
 
   private
 
